@@ -1,0 +1,39 @@
+<div class="divMain">
+    <div class="divSearch">
+        <!-- <input type="text" class="inputSearch" (keyup)="onSearch()" [(ngModel)]="contrainsSearch" placeholder="Buscar por nombre del producto"> -->
+        <input type="text" class="inputSearch" placeholder="Buscar por nombre del producto">
+    </div>
+
+    <table datatable class="tableMain">
+        <thead>
+            <tr>
+                <th class="tdHeader"> Codigo </th>
+                <th class="tdHeader"> Estatus </th>
+                <th class="tdHeader"> Fecha </th>
+                <th class="tdHeader"> Retraso </th>
+                <th class="tdHeader"> Responsable </th>
+                <th class="tdHeader"> Accion </th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- <tr *ngFor="let product of products; let i = index"> -->
+            <tr>
+                <td> ACT0002 </td>
+                <td> Pendiente </td>
+                <td> 20/04/2022 </td>
+                <td> 3 </td>
+                <td> Diego </td>
+                <td>
+                    <!-- <button class="btnIcon" title="Eliminar" (click)="delete(product, i)"> -->`
+                    <button class="btnIcon" title="Eliminar">
+                      <img class="iconBoton" src="./../../../../assets/Icon/Eliminar.png"/>
+                    </button>
+                    <!-- <button class="btnIcon" title="Editar" (click)="updateProduct(product)"> -->
+                    <button class="btnIcon" title="Editar">
+                      <img class="iconBoton" src="./../../../../assets/Icon/Editar.png"/>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

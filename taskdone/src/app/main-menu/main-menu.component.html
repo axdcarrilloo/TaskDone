@@ -8,7 +8,7 @@
 <nav class="navbar navMenuMain">
     <div class="navbar-header">
         <a href="" class="navbar-brand">
-            <img src="./../../../assets/IconMain.png" class="iconoMain">
+            <img src="./../../assets/Icon/IconMain.png" class="iconoMain">
         </a>
     </div>
 
@@ -16,8 +16,7 @@
         <ul class="nav navbar-nav">
             <li><button mat-button [matMenuTriggerFor]="menuProduct" class="btnItemMain"> Actividades <b class="caret"></b></button>
                 <mat-menu #menuProduct="matMenu">
-                    <button mat-menu-item routerLink="register-producto"> Ver </button>
-                    <button mat-menu-item routerLink="consult-producto"> Registrar </button>
+                    <button mat-menu-item routerLink="listar-actividades"> Ver </button>
                 </mat-menu>
             </li>
 
