@@ -16,13 +16,12 @@
             </tr>
         </thead>
         <tbody>
-            <!-- <tr *ngFor="let product of products; let i = index"> -->
-            <tr>
-                <td> ACT0002 </td>
-                <td> Pendiente </td>
-                <td> 20/04/2022 </td>
-                <td> 3 </td>
-                <td> Diego </td>
+            <tr *ngFor="let activity of activities; let i = index">
+                <td> {{ activity.codigo }} </td>
+                <td> {{ activity.estatus }} </td>
+                <td> {{ activity.fechaEjecucion }} </td>
+                <td> {{ activity.diasRetraso }} </td>
+                <td> {{ activity.idResponsable }} </td>
                 <td>
                     <!-- <button class="btnIcon" title="Eliminar" (click)="delete(product, i)"> -->
                     <button class="btnIcon" title="Eliminar">

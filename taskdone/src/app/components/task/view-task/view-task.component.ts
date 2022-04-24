@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivityServiceService } from './../../../core/services/activity-service.service';
+import { ActivityDto } from './../../../core/dtos/activity-dto';
 
 @Component({
   selector: 'app-view-task',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewTaskComponent implements OnInit {
 
-  constructor() { }
+  activities?: ActivityDto[];
+
+  constructor(private activityServiceSvc: ActivityServiceService) { }
 
   ngOnInit(): void {
+    this.read();
+  }
+
+  read(): void {
+    this.activityServiceSvc.read().subscribe((data: ActivityDto[]) => {
+      this.activities = data;
+    });
   }
 
 }
