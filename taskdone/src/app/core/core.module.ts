@@ -3,15 +3,17 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ActivityServiceService } from './services/activity-service.service';
+import { EmployeeServiceService } from './services/employee-service.service';
 
 @NgModule({
   declarations: [],
   imports: [
-    CommonModule,
+  CommonModule,
     HttpClientModule
   ],
   providers: [
-    ActivityServiceService
+    ActivityServiceService,
+    EmployeeServiceService
   ]
 })
 

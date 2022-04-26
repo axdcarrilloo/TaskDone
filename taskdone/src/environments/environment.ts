@@ -5,7 +5,11 @@
 export const environment = {
   production: false,
   name: '(dev)',
-  ACTIVITY_GETALL: 'http://localhost:9092/TaskDone/activity/activity-getall'
+  ACTIVITY_GETALL: 'http://localhost:9092/TaskDone/activity/activity-getall',
+  ACTIVITY_UPDATE: 'http://localhost:9092/TaskDone/activity/activity-update',
+  EMPLOYEE_GETALL: 'http://localhost:9092/TaskDone/employee/employee-getall',
+  EMPLOYEE_GETBYID: 'http://localhost:9092/TaskDone/employee/employee-getbyid/',
+  ACTIVITY_DELETEBYID: 'http://localhost:9092/TaskDone/activity/activity-delete/'
 };
 
 /*

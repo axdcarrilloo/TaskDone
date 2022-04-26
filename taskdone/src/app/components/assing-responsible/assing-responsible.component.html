@@ -1,0 +1,22 @@
+<table datatable class="tableMain">
+    <thead>
+        <tr>
+            <th class="tdHeader"> Codigo </th>
+            <th class="tdHeader"> Cedula </th>
+            <th class="tdHeader"> Nombre </th>
+            <th class="tdHeader"> Responsable </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let employee of employees; let i = index">
+            <td> {{ employee.codigo }} </td>
+            <td> {{ employee.cedula }} </td>
+            <td> {{ employee.nombre }} {{ employee.apellido }}</td>
+            <td>
+                <button class="btnIcon" title="Asignar responsable" (click)="assign(employee, i)">
+                    <img class="iconBoton" src="./../../../../assets/Icon/mas.png"/>
+                </button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,21 +1,25 @@
 export class ActivityDto{
+    id: number;
     codigo: string;
     estatus: string;
     fechaEjecucion: Date;
     diasRetraso: number;
-    idResponsable: number;
+    responsable: number;
+    nombreResponsable: string;
     fechaCreacion: Date;
     fechaModificacion?: Date;
 
-    constructor(codigo: string, estatus: string, 
+    constructor(id: number, codigo: string, estatus: string, 
         fechaEjecucion: Date, diasRetraso: number, 
-        idResponsable: number, fechaCreacion: Date, fechaModificacion: Date) {
-
+        responsable: number, nombreResponsable: string, fechaCreacion: Date, fechaModificacion: Date) {
+        
+        this.id = id;
         this.codigo = codigo;
         this.estatus = estatus;
         this.fechaEjecucion = fechaEjecucion;
         this.diasRetraso = diasRetraso;
-        this.idResponsable = idResponsable;
+        this.responsable = responsable;
+        this.nombreResponsable = nombreResponsable;
         this.fechaCreacion = fechaCreacion;
         this.fechaModificacion = fechaModificacion;
         this.estatus = estatus

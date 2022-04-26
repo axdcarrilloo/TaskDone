@@ -1,0 +1,38 @@
+<h1 mat-dialog-title> Modificar Actividad </h1>
+<div class="divDialog">
+    <form [formGroup]="activityForm" (ngSubmit)="save($event)" class="formMain" novalidate>
+        <p>
+            <label> Codigo </label>
+            <input type="text" class="form-control" formControlName="codigo" readonly>
+        </p>
+
+        <p>
+            <label> Estatus </label>
+            <!-- <input type="text" class="form-control" formControlName="estatus"> -->
+            <select formControlName="estatus" class="form-control">   
+                <option> REALIZADO </option>  
+                <option> PENDIENTE </option>  
+            </select>
+        </p>
+
+        <p>
+            <label> Fecha de ejecucion </label>
+            <input type="text" class="form-control" formControlName="fechaEjecucion">
+        </p>
+
+        <p>
+            <label> Dias de retraso </label>
+            <input type="text" class="form-control" formControlName="diasRetraso">
+        </p>
+
+        <p>
+            <label> Responsable </label>
+            <input type="text" class="form-control" formControlName="nombreResponsable" required>
+        </p>
+
+        <button mat-button type="submit" class="btn btn-secondary" (click)="update()"> Modificar </button>
+    </form>
+</div>
+<div mat-dialog-actions>
+    <button mat-button (click)="confirmed()" class="btn btn-primary">Aceptar</button>
+</div>

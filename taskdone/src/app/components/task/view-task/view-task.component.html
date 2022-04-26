@@ -1,7 +1,7 @@
 <div class="divMain">
     <div class="divSearch">
         <!-- <input type="text" class="inputSearch" (keyup)="onSearch()" [(ngModel)]="contrainsSearch" placeholder="Buscar por nombre del producto"> -->
-        <input type="text" class="inputSearch" placeholder="Buscar por nombre del producto">
+        <input type="text" class="inputSearch" placeholder="Buscar codigo">
     </div>
 
     <table datatable class="tableMain">
@@ -21,14 +21,15 @@
                 <td> {{ activity.estatus }} </td>
                 <td> {{ activity.fechaEjecucion }} </td>
                 <td> {{ activity.diasRetraso }} </td>
-                <td> {{ activity.idResponsable }} </td>
+                <td> {{ activity.nombreResponsable }} </td>
                 <td>
-                    <!-- <button class="btnIcon" title="Eliminar" (click)="delete(product, i)"> -->
-                    <button class="btnIcon" title="Eliminar">
+                    <button class="btnIcon" title="Asignar responsable" (click)="assign(activity)">
+                        <img class="iconBoton" src="./../../../../assets/Icon/mas.png"/>
+                    </button>
+                    <button class="btnIcon" title="Eliminar" (click)="delete(activity, i)">
                       <img class="iconBoton" src="./../../../../assets/Icon/Eliminar.png"/>
                     </button>
-                    <!-- <button class="btnIcon" title="Editar" (click)="updateProduct(product)"> -->
-                    <button class="btnIcon" title="Editar">
+                    <button class="btnIcon" title="Editar" (click)="update(activity)">
                       <img class="iconBoton" src="./../../../../assets/Icon/Editar.png"/>
                     </button>
                 </td>

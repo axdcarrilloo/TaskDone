@@ -1,0 +1,25 @@
+<div class="divMain">
+    <div class="divSearch">
+        <!-- <input type="text" class="inputSearch" (keyup)="onSearch()" [(ngModel)]="contrainsSearch" placeholder="Buscar por nombre del producto"> -->
+        <input type="text" class="inputSearch" placeholder="Buscar codigo">
+    </div>
+
+    <table datatable class="tableMain">
+        <thead>
+            <tr>
+                <th class="tdHeader"> Codigo </th>
+                <th class="tdHeader"> Cedula </th>
+                <th class="tdHeader"> Nombre </th>
+                <th class="tdHeader"> Celular </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employees; let i = index">
+                <td> {{ employee.codigo }} </td>
+                <td> {{ employee.cedula }} </td>
+                <td> {{ employee.nombre }} {{ employee.apellido }} </td>
+                <td> {{ employee.celular }} </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

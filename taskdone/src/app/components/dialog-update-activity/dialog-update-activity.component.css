@@ -1,0 +1,9 @@
+.formMain {
+    text-align: center;
+}
+
+.form-control {
+    color: black;
+    border-style: double;
+    text-align: center;
+}
