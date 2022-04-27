@@ -1,7 +1,6 @@
 <div class="divMain">
     <div class="divSearch">
-        <!-- <input type="text" class="inputSearch" (keyup)="onSearch()" [(ngModel)]="contrainsSearch" placeholder="Buscar por nombre del producto"> -->
-        <input type="text" class="inputSearch" placeholder="Buscar codigo">
+        <input type="text" class="inputSearch" placeholder="Buscar por nombre o cedula" (keyup)="onSearch()" [(ngModel)]="contrainsSearch">
     </div>
 
     <table datatable class="tableMain">

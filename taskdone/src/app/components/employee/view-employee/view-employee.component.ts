@@ -10,6 +10,7 @@ import { EmployeeServiceService } from './../../../core/services/employee-servic
 export class ViewEmployeeComponent implements OnInit {
 
   employees!: EmployeeDto[];
+  contrainsSearch = '';
 
   constructor(private employeeServiceSvc: EmployeeServiceService) { }
 
@@ -21,6 +22,16 @@ export class ViewEmployeeComponent implements OnInit {
     this.employeeServiceSvc.read().subscribe((data: EmployeeDto[]) => {
       this.employees = data;
     });
+  }
+
+  onSearch(): void{
+    const characters = this.contrainsSearch.length;
+    if (characters >= 3){
+      // console.log('Salir  buscar ' + this.employeeServiceSvc.capitalizeFirstLetter(this.contrainsSearch));
+      this.employeeServiceSvc.getByNombreCedula(this.contrainsSearch).subscribe((data: EmployeeDto[]) => {
+        this.employees = data;
+      });
+    }
   }
 
 }

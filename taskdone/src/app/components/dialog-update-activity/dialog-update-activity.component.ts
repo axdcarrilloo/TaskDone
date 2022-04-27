@@ -29,9 +29,7 @@ export class DialogUpdateActivityComponent implements OnInit {
   ngOnInit(): void {
   }
   
-  showErrorUpdate(): void{
-    const info = ['Error de modificacion',
-      'No se pudo modificar esta actividad', 'warning'];
+  showErrorUpdate(info: string[]): void{
     this.dialogConfirm.open(
       DialogConfirmationComponent, {data: info
     // tslint:disable-next-line: deprecation
@@ -61,15 +59,23 @@ export class DialogUpdateActivityComponent implements OnInit {
 
   update(): void{
     let actividadMain = this.activityForm.value;
-    console.log(this.activityForm.value.responsable + "...!")
-    // tslint:disable-next-line: deprecation
-    this.activitySvc.update(actividadMain).subscribe((data: number) => {
-      if (data !== 0){
-        this.showSuccessDialogue();
-      }else{
-        this.showErrorUpdate();
-      }
-    });
+    if(actividadMain.responsable !== null && actividadMain.nombreResponsable !== null) {
+      // tslint:disable-next-line: deprecation
+      this.activitySvc.update(actividadMain).subscribe((data: number) => {
+        if (data !== 0){
+          this.showSuccessDialogue();
+        }else{
+          const info = ['Error de modificacion',
+            'No se pudo modificar la actividad', 'warning'];
+          this.showErrorUpdate(info);
+        }
+      });
+    }else {
+      const info = ['Error de modificacion',
+      'No se puede modificar la actividad sin responsable alguno, por favor seleccione un responsable antes de.', 'warning'];
+      this.showErrorUpdate(info);
+    }
+    
   }
 
   buildForm(): FormGroup{

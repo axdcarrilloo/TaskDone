@@ -27,4 +27,9 @@ export class ActivityServiceService {
   read(): Observable<ActivityDto[]>{
     return this.http.get<ActivityDto[]>(environment.ACTIVITY_GETALL);
   }
+
+  getByCodigo(codigo: string): Observable<ActivityDto[]> {
+    return this.http.get<ActivityDto[]>(environment.ACTIVITY_GETBYCODIGO + codigo);
+  }
+
 }

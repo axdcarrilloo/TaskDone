@@ -9,7 +9,9 @@ export const environment = {
   ACTIVITY_UPDATE: 'http://localhost:9092/TaskDone/activity/activity-update',
   EMPLOYEE_GETALL: 'http://localhost:9092/TaskDone/employee/employee-getall',
   EMPLOYEE_GETBYID: 'http://localhost:9092/TaskDone/employee/employee-getbyid/',
-  ACTIVITY_DELETEBYID: 'http://localhost:9092/TaskDone/activity/activity-delete/'
+  ACTIVITY_DELETEBYID: 'http://localhost:9092/TaskDone/activity/activity-delete/',
+  EMPLOYEE_GETBYNOMBRE_CEDULA: 'http://localhost:9092/TaskDone/employee/employee-getbynombreCedula/',
+  ACTIVITY_GETBYCODIGO: 'http://localhost:9092/TaskDone/activity/activity-getbyCodigo/',
 };
 
 /*

@@ -19,4 +19,12 @@ export class EmployeeServiceService {
     return this.http.get<EmployeeDto[]>(environment.EMPLOYEE_GETALL);
   }
 
+  capitalizeFirstLetter(name: string): string {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+  }
+
+  getByNombreCedula(consulta: string): Observable<EmployeeDto[]> {
+    return this.http.get<EmployeeDto[]>(environment.EMPLOYEE_GETBYNOMBRE_CEDULA + consulta);
+  }
+
 }

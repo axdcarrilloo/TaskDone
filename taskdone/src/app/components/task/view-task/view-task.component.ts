@@ -16,6 +16,7 @@ import { EmployeeDto } from './../../../core/dtos/employee-dto';
 export class ViewTaskComponent implements OnInit {
 
   activities?: ActivityDto[];
+  contrainsSearch = '';
 
   constructor(private dialogConfirm: MatDialog, private employeeServiceSvc: EmployeeServiceService,
     private activityServiceSvc: ActivityServiceService, private dialog: MatDialog) { }
@@ -100,6 +101,13 @@ export class ViewTaskComponent implements OnInit {
         const info = ['Eliminacion Errada', 'La actividad no se pudo eliminar', 'success'];
         this.showErrorUpdate(info);
       }
+    });
+  }
+
+  getbyCodigo(): void {
+    console.log(this.contrainsSearch);
+    this.activityServiceSvc.getByCodigo(this.contrainsSearch).subscribe((data: ActivityDto[]) => {
+      this.activities = data;
     });
   }
 
